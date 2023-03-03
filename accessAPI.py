@@ -8,7 +8,7 @@ def allowSelfSignedHttps(allowed):
     if allowed and not os.environ.get('PYTHONHTTPSVERIFY', '') and getattr(ssl, '_create_unverified_context', None):
         ssl._create_default_https_context = ssl._create_unverified_context
 
-def llamarservicio():
+def llamarservicio(age, job, marital, education, default, housing, loan, contact, month, duration, campaign, pdays, previous, poutcome, emp, cons, nr):
     allowSelfSignedHttps(True) # this line is needed if you use self-signed certificate in your scoring service.
 
     # Request data goes here
@@ -20,25 +20,23 @@ def llamarservicio():
       "Inputs": {
         "data": [
           {
-            "age": 25,
-            "job": "unknown",
-            "marital": "single",
-            "education": "high.school",
-            "default": "yes",
-            "housing": "yes",
-            "loan": "yes",
-            "contact": "cellular",
-            "month": "jan",
-            "duration": 4900,
-            "campaign": 50,
-            "pdays": 500,
-            "previous": 5,
-            "poutcome": "nonexistent",
-            "emp.var.rate": 1,
-            "cons.price.idx": 94,
-            "cons.conf.idx": -40,
-            "euribor3m": 2.5,
-            "nr.employed": 5001
+            "age": age,
+            "job": job,
+            "marital": marital,
+            "education": education,
+            "default": default,
+            "housing": housing,
+            "loan": loan,
+            "contact": contact,
+            "month": month,
+            "duration": duration,
+            "campaign": campaign,
+            "pdays": pdays,
+            "previous": previous,
+            "poutcome": poutcome,
+            "emp.var.rate": emp,
+            "cons.price.idx": cons,
+            "nr.employed": nr
           }
         ]
       },
@@ -49,15 +47,15 @@ def llamarservicio():
 
     body = str.encode(json.dumps(data))
 
-    url = 'https://fca-regression.eastus2.inference.ml.azure.com/score'
+    url = 'https://herramientas3-qvcot.westus3.inference.ml.azure.com/score'
     # Replace this with the primary/secondary key or AMLToken for the endpoint
-    api_key = 'AnVcIXbYyV9KbCKmAGmbV2gNhpMAdmXg'
+    api_key = 'keX8bQdqnSATEmBFUKzhUfaIeGwiYQmA'
     if not api_key:
         raise Exception("A key should be provided to invoke the endpoint")
 
     # The azureml-model-deployment header will force the request to go to a specific deployment.
     # Remove this header to have the request observe the endpoint traffic rules
-    headers = {'Content-Type':'application/json', 'Authorization':('Bearer '+ api_key), 'azureml-model-deployment': 'fca-deploy2' }
+    headers = {'Content-Type':'application/json', 'Authorization':('Bearer '+ api_key), 'azureml-model-deployment': 'automlf78e7e75158-1' }
 
     req = urllib.request.Request(url, body, headers)
 

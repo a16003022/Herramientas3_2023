@@ -9,6 +9,7 @@ import accessAPI as servicio
 import json
 
 st.header("FORMULARIO PARA SOLICITAR CRÉDITO")
+st.text("Aplicación realizada por: Heisler Narváez Kú - Primer Parcial | Herramientas III")
 st.subheader("Datos generales")
 st.write("Llena todos los datos para determinar si eres apto para recibir el crédito:")
 df = pd.read_csv('Herramientas3_2023_banco.csv.csv')

@@ -7,6 +7,7 @@ import streamlit as st
 import pandas as pd
 import accessAPI as servicio
 import json
+import picke
 
 st.header("FORMULARIO PARA SOLICITAR CRÉDITO")
 st.text("Aplicación realizada por: Heisler Narváez Kú - Primer Parcial | Herramientas III")

@@ -9,6 +9,32 @@ import accessAPI as servicio
 import json
 import picke
 
+model = pickle.load(open("model.pkl","rb"))
+
+data={
+            "age": 25,
+            "job": "unknown",
+            "marital": "single",
+            "education": "high.school",
+            "default": "yes",
+            "housing": "yes",
+            "loan": "yes",
+            "contact": "cellular",
+            "month": "jan",
+            "duration": 4900,
+            "campaign": 50,
+            "pdays": 500,
+            "previous": 5,
+            "poutcome": "nonexistent",
+            "emp.var.rate": 1,
+            "cons.price.idx": 94,
+            "nr.employed": 5001
+          }
+
+df=pd.json_normalize(data)
+
+st.write(model.predict(df))
+
 st.header("FORMULARIO PARA SOLICITAR CRÉDITO")
 st.text("Aplicación realizada por: Heisler Narváez Kú - Primer Parcial | Herramientas III")
 st.subheader("Datos generales")

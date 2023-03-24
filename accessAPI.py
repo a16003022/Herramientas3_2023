@@ -47,9 +47,9 @@ def llamarservicio(age, job, marital, education, default, housing, loan, contact
 
     body = str.encode(json.dumps(data))
 
-    url = 'https://herramientas3-qvcot.westus3.inference.ml.azure.com/score'
+    url = 'https://fca-regression.eastus2.inference.ml.azure.com/score'
     # Replace this with the primary/secondary key or AMLToken for the endpoint
-    api_key = 'keX8bQdqnSATEmBFUKzhUfaIeGwiYQmA'
+    api_key = 'AnVcIXbYyV9KbCKmAGmbV2gNhpMAdmXg'
     if not api_key:
         raise Exception("A key should be provided to invoke the endpoint")
 

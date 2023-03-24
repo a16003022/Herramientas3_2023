@@ -57,7 +57,7 @@ def llamarservicio(age, job, marital, education, default, housing, loan, contact
 
     # The azureml-model-deployment header will force the request to go to a specific deployment.
     # Remove this header to have the request observe the endpoint traffic rules
-    headers = {'Content-Type':'application/json', 'Authorization':('Bearer '+ api_key), 'azureml-model-deployment': 'automlf78e7e75158-1' }
+    headers = {'Content-Type':'application/json', 'Authorization':('Bearer '+ api_key), 'azureml-model-deployment': 'fca-deploy2' }
 
     req = urllib.request.Request(url, body, headers)
 

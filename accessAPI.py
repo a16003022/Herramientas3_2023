@@ -36,8 +36,6 @@ def llamarservicio(age, job, marital, education, default, housing, loan, contact
             "poutcome": poutcome,
             "emp.var.rate": emp,
             "cons.price.idx": cons,
-            "cons.conf.idx": 0,
-            "euribor3m": 0.0,
             "nr.employed": nr
           }
         ]
